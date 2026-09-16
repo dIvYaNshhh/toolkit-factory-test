@@ -1,0 +1,9 @@
+name: seed
+on: [push, workflow_dispatch]
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo toolkit-factory > seed.txt
+      - uses: actions/upload-artifact@v4
+        with: {name: seed-artifact, path: seed.txt}
